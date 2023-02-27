@@ -1,0 +1,115 @@
+#slider {
+	position: relative;
+	overflow: hidden;
+	height: 400px;
+}
+
+#slides {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 300%;
+	display: flex;
+	animation: slider 50s infinite;
+}
+
+.slide {
+	position: relative;
+	height: 100%;
+	flex: 1;
+	background-position: center;
+	background-size: cover;
+}
+
+.slide-1 {
+	background-image: url('ASSETS/allec-gomes-xnRg3xDcNnE-unsplash.jpg');
+}
+
+.slide-2 {
+	background-image: url('ASSETS/fernando-andrade-nAOZCYcLND8-unsplash.jpg');
+}
+
+.slide-3 {
+	background-image: url('ASSETS/mae-mu-U1iYwZ8Dx7k-unsplash.jpg');
+}
+
+
+@keyframes slider {
+	0% {
+		transform: translateX(0%);
+	}
+	20% {
+		transform: translateX(0%);
+	}
+	25% {
+		transform: translateX(-100%);
+	}
+	45% {
+		transform: translateX(-100%);
+	}
+	50% {
+		transform: translateX(-200%);
+	}
+	70% {
+		transform: translateX(-200%);
+	}
+	75% {
+		transform: translateX(-300%);
+	}
+	95% {
+		transform: translateX(-300%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+
+#navigation {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 100;
+	display: flex;
+}
+
+.nav-item {
+	height: 10px;
+	width: 10px;
+	margin: 0 5px;
+	border-radius: 50%;
+	background-color: #ff0101;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+}
+
+.nav-item.active {
+	background-color: #00ff11;
+}
+
+
+.nav-item:nth-child(1):hover ~ #slides {
+	animation-play-state: paused;
+}
+
+.nav-item:nth-child(2):hover ~ #slides {
+	animation-play-state: paused;
+}
+
+.nav-item:nth-child(3):hover ~ #slides {
+	animation-play-state: paused;
+}
+
+.nav-item:nth-child(1):hover ~ #slides {
+	transform: translateX(0%);
+}
+
+.nav-item:nth-child(2):hover ~ #slides {
+	transform: translateX(-100%);
+}
+
+.nav-item:nth-child(3):hover ~ #slides {
+	transform: translateX(-200%);
+}
